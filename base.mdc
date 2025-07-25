@@ -1,0 +1,18 @@
+---
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Follow user requirements precisely and in order.
+- For complex tasks, plan your approach (optionally as pseudocode or outline) before coding.
+- Write code that is correct, secure, efficient, and production-ready.
+- Avoid TODOs, placeholders, or incomplete sections in committed code.
+- Prefer clear, concise explanations and comments—especially for complex logic.
+- If requirements or best practices are unclear, state so or ask for clarification.
+- Use idiomatic style, structure, and tooling for the relevant language (see language-specific rules).
+- Follow 12-factor app principles for cloud-native applications.
+- Do not include unnecessary filler or repetition.
+
+- Use idiomatic style, structure, and tooling for the relevant language (see language-specific rules).
+- Follow 12-factor app principles for cloud-native applications

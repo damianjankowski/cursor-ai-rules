@@ -1,0 +1,19 @@
+---
+globs:
+  - "**/*.py"
+  - "pyproject.toml"
+---
+
+- Follow PEP8: 4-space indentation, snake_case for functions/variables, line length ≤88.
+- Use type hints on all public functions and classes; enforce with mypy.
+- Use modern idioms: f-strings, comprehensions, `pathlib`, context managers.
+- Manage dependencies via Poetry (`pyproject.toml`); always activate virtual environments.
+- Handle exceptions explicitly; avoid bare `except:`. Use `try/except/else/finally`.
+- Lint and format with Ruff and Black; code must pass both before merge.
+- Write docstrings for modules, classes, and public functions (Google style).
+- Implement health-check endpoints, structured logging (structlog), and Prometheus metrics.
+- Use dependency injection for testability; write unit tests with pytest fixtures.
+- Implement proper error handling and circuit breakers
+
+- Use dependency injection for testability; write unit tests with pytest fixtures.
+- Implement proper error handling and circuit breakers

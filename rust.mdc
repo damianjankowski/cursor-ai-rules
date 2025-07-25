@@ -1,0 +1,18 @@
+---
+globs:
+  - "**/*.rs"
+  - "**/*.toml"
+alwaysApply: true
+---
+
+- Enforce formatting with `rustfmt` and lint with `clippy`; apply all fixes.
+- Favor safe Rust; minimize `unsafe` blocks, justify and comment any use.
+- Use `Result` and `Option` types for error/null handling; propagate errors via `?`.
+- Document public APIs with `///` rustdoc comments, including examples and edge cases.
+- Write unit tests (`#[cfg(test)]`) and integration tests; ensure `cargo test` passes.
+- Prefer iterators, enums, and pattern matching over manual indexing.
+- Keep modules small and focused; organize code logically under `src/`.
+- Manage dependencies with explicit version requirements and minimal features.
+
+- Keep modules small and focused; organize code logically under `src/`.
+- Manage dependencies with explicit version requirements and minimal features.

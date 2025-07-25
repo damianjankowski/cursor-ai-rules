@@ -1,0 +1,40 @@
+---
+globs:
+  - "**/.github/workflows/**"
+---
+
+# Pipeline Structure
+- Separate jobs for build, test, lint, and deploy.
+- Lint and tests must pass before build artifacts are created (fail fast).
+
+# Security
+- Integrate SAST (e.g., Snyk, GitHub CodeQL) and dependency scanning in CI.
+- Fail pipeline if critical vulnerabilities are detected.
+
+# Verification
+- Confirm pipeline fails on lint or test errors.
+- Ensure security scan reports are generated and reviewed.
+
+# Example (GitHub Actions)
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make lint
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make test
+
+- uses: actions/checkout@v3
+- run: make test
+
+# Verification Steps
+- Confirm pipeline fails on lint or test errors.
+- Ensure security scan reports are generated and reviewed.
+
+- Confirm pipeline fails on lint or test errors.
+- Ensure security scan reports are generated and reviewed.

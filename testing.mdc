@@ -1,0 +1,37 @@
+---
+globs:
+  - "**/*_test.go"
+  - "**/*_test.py"
+  - "**/*_test.ts"
+alwaysApply: false
+---
+
+# Coverage
+- Aim for ≥80% coverage on core modules; all critical code paths must have tests.
+- Use coverage tools: `pytest --cov`, `go test -cover`, `nyc` for JavaScript/TypeScript.
+
+# Structure
+- Python: tests in `tests/`, use `pytest` fixtures.
+- Go: use table-driven tests (`func TestXxx(t *testing.T)` with subtests).
+- JS/TS: group related specs in `*.spec.ts`, mock external calls.
+
+# Example (Go)
+func TestComputeSum(t *testing.T) {
+  cases := []struct{ a, b, want int }{
+    {1, 2, 3}, {0, 0, 0},
+  }
+  for _, c := range cases {
+    t.Run(fmt.Sprintf("%d+%d", c.a, c.b), func(t *testing.T) {
+      if got := ComputeSum(c.a, c.b); got != c.want {
+        t.Errorf("ComputeSum(%d, %d) = %d; want %d", c.a, c.b, got, c.want)
+      }
+    })
+  }
+}
+
+# Verification
+- Each `*_test.*` file must contain at least one assertion.
+- Validate coverage report is generated and reviewed.
+# Verification Steps
+- Ensure each `*_test.*` file contains at least one assertion.
+- Validate coverage report is generated and reviewed.

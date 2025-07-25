@@ -1,0 +1,28 @@
+---
+globs:
+  - "**/*.py"
+  - "**/*.go"
+alwaysApply: false
+---
+
+# Efficient Algorithms
+- Prefer streaming and iterators over loading entire datasets into memory.
+- Cache expensive computations using in-memory caches or Redis where appropriate.
+
+# Concurrency & Parallelism
+- Go: use goroutines with context and worker pools; avoid unbounded goroutine spawning.
+- Python: use async/await for I/O-bound tasks; avoid CPU-bound work in a single thread.
+
+# Verification
+- Benchmark critical paths (`go test -bench`, `pytest-benchmark`) before and after changes.
+- Review CPU/memory profiles to ensure no unexpected spikes.
+
+tasks = [session.get(u) for u in urls]
+return await asyncio.gather(*tasks)
+
+# Verification Steps
+- Benchmark critical paths (`go test -bench`, `pytest-benchmark`) before and after changes.
+- Review CPU/memory profiles to ensure no unexpected spikes.
+
+- Benchmark critical paths (`go test -bench`, `pytest-benchmark`) before and after changes.
+- Review CPU/memory profiles to ensure no unexpected spikes.

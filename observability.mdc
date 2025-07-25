@@ -1,0 +1,25 @@
+---
+globs:
+  - "**/*.py"
+  - "**/*.go"
+alwaysApply: true
+---
+
+# Logging
+- Use structured (JSON or key-value) logging formats for machine parsing.
+- Include `timestamp`, `level`, `service`, and `request_id` in every log entry.
+- Example (Python):
+  import structlog
+  log = structlog.get_logger()
+  log.info("user_logged_in", user_id=user.id, request_id=req_id)
+
+# Metrics & Tracing
+- Instrument key operations with Prometheus metrics (`.inc()`, `.observe()`).
+- Propagate distributed trace IDs (e.g., OpenTelemetry) through HTTP headers.
+
+# Verification
+- Confirm presence of `request_id` in sample log outputs.
+- Check metrics endpoint (e.g., `/metrics`) exposes expected counters.
+
+- Confirm presence of `request_id` in sample log outputs.
+- Check metrics endpoint (e.g., `/metrics`) exposes expected counters.

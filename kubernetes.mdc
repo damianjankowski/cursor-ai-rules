@@ -1,0 +1,19 @@
+---
+globs:
+  - "**/*.yaml"
+  - "**/*.yml"
+alwaysApply: true
+---
+
+- Store all manifests in Git (GitOps); avoid direct `kubectl apply` from CLI.
+- Pin Docker image tags and Helm chart versions; never use `:latest`.
+- Set resource `requests` and `limits` for CPU and memory on all containers.
+- Define liveness and readiness probes for each workload.
+- Use ConfigMaps and Secrets; never hardcode sensitive data.
+- Apply least-privilege RBAC; document roles and bindings clearly.
+- Structure Helm charts with Chart.yaml, values.yaml, templates/, and Chart.lock.
+- For ArgoCD Application CRDs: specify `syncPolicy` and automated self-heal.
+- Scope overlays per environment via Kustomize or Helm values.
+
+- For ArgoCD Application CRDs: specify `syncPolicy` and automated self-heal.
+- Scope overlays per environment via Kustomize or Helm values.

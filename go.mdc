@@ -1,0 +1,16 @@
+---
+title: Go Language Rules
+---
+
+- Format code with `go fmt`; ensure all code is `gofmt`-compliant.
+- Use idiomatic Go: short variable names, clear `//` doc comments for exported symbols.
+- Return and check errors explicitly after every call; propagate with `%w`.
+- Use `context.Context` on all APIs and goroutines; pass contexts through call chains.
+- Organize code into `cmd/`, `pkg/`, and `internal/` packages; avoid circular imports.
+- Prefer composition and interfaces over embedding or inheritance.
+- Write unit tests (`*_test.go`) for every function; aim for high coverage.
+- Use the standard library first; add third-party modules only when necessary.
+- Document public APIs with full examples in GoDoc comments.
+
+- Use the standard library first; add third-party modules only when necessary.
+- Document public APIs with full examples in GoDoc comments.

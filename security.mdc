@@ -1,0 +1,39 @@
+---
+globs:
+  - "**/*.py"
+  - "**/*.go"
+  - "**/*.tf"
+alwaysApply: true
+---
+
+# Secure Configuration
+- Never hardcode secrets (API keys, tokens, passwords) in source code.
+- Load secrets from environment variables or secret managers (e.g., AWS Secrets Manager, Vault).
+- Ensure `.env` files containing secrets are not committed (see @.gitignore).
+- Example (Python):
+  import os
+  db_password = os.getenv("DB_PASSWORD")
+- Example (Terraform):
+  variable "db_password" {
+    type = string
+    sensitive = true
+  }
+
+# Encryption & Transport
+- Enforce TLS for all external communications (e.g., database, APIs).
+- Use client libraries with built-in TLS verification; never disable certificate checks.
+
+# Verification
+- Search for `password =` or `token =` in code and ensure usage of env vars.
+- Confirm `.env` is in `.gitignore` and no `.env` files are tracked.
+
+# Encryption and Transport
+- Enforce TLS for all external communications (e.g., database, APIs).
+- Use client libraries with built-in TLS verification; never disable certificate checks.
+
+# Verification Steps
+- Search for `password =` or `token =` in code and ensure usage of env vars[3].
+- Confirm `.env` is in `.gitignore` and no `.env` files are tracked.
+# Verification Steps
+- Search for `password =` or `token =` in code and ensure usage of env vars[3].
+- Confirm `.env` is in `.gitignore` and no `.env` files are tracked.

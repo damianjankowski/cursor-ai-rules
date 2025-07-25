@@ -1,0 +1,17 @@
+---
+globs:
+  - "**/*.tf"
+---
+
+- Organize code into reusable modules; each module in its own directory.
+- Pin provider and module versions in `required_providers` and version constraints.
+- Store state remotely using a locked, encrypted backend (e.g., S3 with DynamoDB lock).
+- Run `terraform fmt` and `terraform validate` before commits.
+- Use tflint and Terrascan for linting and security checks; enforce in CI.
+- Parameterize variables with input validation; avoid hardcoding values.
+- Mark sensitive variables with `sensitive = true`; integrate with secret managers.
+- Tag all resources with `owner`, `environment`, and `project`.
+- Document module inputs, outputs, and usage examples in README.md.
+
+- Tag all resources with `owner`, `environment`, and `project`.
+- Document module inputs, outputs, and usage examples in README.md.
